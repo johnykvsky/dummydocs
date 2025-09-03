@@ -1,0 +1,23 @@
+## DateTime
+
+- `amPm($until = "now")`: (string) 'pm'
+- `century()`: (string) 'XIII'
+- `date($format = "Y-m-d", $until = "now")`: (string) '2018-05-11'
+- `dateTime($until = "now", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('2006-03-22 03:36:36')
+- `dateTimeAD($until = "now", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('1491-10-31 14:51:33')
+- `dateTimeBetween($from = "-30 years", $until = "now", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('2015-04-27 21:52:59')
+- `dateTimeInInterval($from = "-30 years", $interval = "+5 days", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('1995-08-29 15:53:59')
+- `dateTimeThisCentury($until = "now", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('2017-07-13 11:21:09')
+- `dateTimeThisDecade($until = "now", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('2024-11-01 10:42:53')
+- `dateTimeThisMonth($until = "last day of this month", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('2025-08-15 06:36:47')
+- `dateTimeThisWeek($until = "sunday this week", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('2025-08-27 18:09:57')
+- `dateTimeThisYear($until = "last day of december", $timezone = null)`: (\DateTimeInterface) DateTimeImmutable('2025-04-28 02:58:59')
+- `dayOfMonth($until = "now")`: (string) '08'
+- `dayOfWeek($until = "now")`: (string) 'Monday'
+- `iso8601($until = "now")`: (string) '2012-04-10T01:31:00+02:00'
+- `month($until = "now")`: (string) '08'
+- `monthName($until = "now")`: (string) 'June'
+- `time($format = "H:i:s", $until = "now")`: (string) '23:58:27'
+- `timezone()`: (string) 'America/Edmonton'
+- `unixTime($until = "now")`: (int) 505668439
+- `year($until = "now")`: (string) '2009'
