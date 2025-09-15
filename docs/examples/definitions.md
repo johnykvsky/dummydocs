@@ -28,6 +28,19 @@ And as a support for extensions:
 * IsbnCalculatorInterface
 * LuhnCalculatorInterface
 
+### How can I remove definition from container
+
+You can do that either by calling 
+
+```php
+$generator->removeDefinition(PersonExtensionInterface::class);
+```
+
+or
+
+```php
+$container->remove(PersonExtensionInterface::class);
+```
 
 ### How can I change definition on the fly
 

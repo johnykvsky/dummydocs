@@ -61,6 +61,7 @@ nav:
       - architecture/clock.md
   - 'Extensions':
       - extensions/address.md
+      - extensions/anydatetime.md
       - extensions/barcode.md
       - extensions/biased.md
       - extensions/blood.md

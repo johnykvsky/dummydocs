@@ -42,6 +42,7 @@ I needed simple dummy data generator for PHP 8.3, with modern architecture in mi
 * added `Enum`, to get random values from PHP enums
 * added `String`, to generate random string from given pool
 * added support for `SystemClock`, PSR-20 implementation of Clock
+* added `AnyDateTime`, as alternative/replacement for `DateTime` extension (see docs for more)
 
 This package also fixes problem with FakerPHP `__destruct()` messing up with `seed()`, plus various other issues.
 

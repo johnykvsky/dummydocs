@@ -9,9 +9,9 @@ Each of them can be added to container and passed to `DummyGenerator`.
 
 To make it easier there is `DefinitionContainerBuilder` that uses `DefinitionPack` with 3 predefined definitions packages:
 
-* **Base**: [DateTime](../extensions/datetime.md), [Enum](../extensions/enum.md), [Lorem](../extensions/lorem.md), [Number](../extensions/number.md), [Strings](../extensions/strings.md), [Uuid](../extensions/uuid.md) 
+* **Base**: [AnyDateTime](../extensions/anydatetime.md), [Enum](../extensions/enum.md), [Lorem](../extensions/lorem.md), [Number](../extensions/number.md), [Strings](../extensions/strings.md), [Uuid](../extensions/uuid.md) 
 * **Default**, all from Base plus: [Coordinates](../extensions/coordinates.md), [Country](../extensions/country.md), [Hash](../extensions/hash.md), [Internet](../extensions/internet.md), [Language](../extensions/language.md), [Person](../extensions/person.md)
-* **All**, all from Default plus: [Address](../extensions/address.md), [Barcode](../extensions/barcode.md), [Biased](../extensions/biased.md), [Blood](../extensions/blood.md), [Color](../extensions/color.md), [Company](../extensions/company.md), [File](../extensions/file.md), [Payment](../extensions/payment.md), [PhoneNumber](../extensions/phone_number.md), [UserAgent](../extensions/user_agent.md), [Version](../extensions/version.md)
+* **All**, all from Default plus: [Address](../extensions/address.md), [Barcode](../extensions/barcode.md), [Biased](../extensions/biased.md), [Blood](../extensions/blood.md), [Color](../extensions/color.md), [Company](../extensions/company.md), [DateTime](../extensions/datetime.md), [File](../extensions/file.md), [Payment](../extensions/payment.md), [PhoneNumber](../extensions/phone_number.md), [UserAgent](../extensions/user_agent.md), [Version](../extensions/version.md)
 
 Sample usage of `DefinitionContainerBuilder` looks like this:
 ```php
