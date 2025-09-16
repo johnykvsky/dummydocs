@@ -618,6 +618,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../extensions/anydatetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Anydatetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../extensions/barcode/" class="md-nav__link">
         
   
@@ -1290,18 +1313,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-enumextension" class="md-nav__link">
+  <a href="#using-enum-extension" class="md-nav__link">
     <span class="md-ellipsis">
-      Using EnumExtension
+      Using Enum extension
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-stringsextension" class="md-nav__link">
+  <a href="#using-strings-extension" class="md-nav__link">
     <span class="md-ellipsis">
-      Using StringsExtension
+      Using Strings extension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anydatetime-versus-datetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      AnyDateTime versus DateTime
     </span>
   </a>
   
@@ -1350,18 +1382,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-enumextension" class="md-nav__link">
+  <a href="#using-enum-extension" class="md-nav__link">
     <span class="md-ellipsis">
-      Using EnumExtension
+      Using Enum extension
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-stringsextension" class="md-nav__link">
+  <a href="#using-strings-extension" class="md-nav__link">
     <span class="md-ellipsis">
-      Using StringsExtension
+      Using Strings extension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anydatetime-versus-datetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      AnyDateTime versus DateTime
     </span>
   </a>
   
@@ -1387,7 +1428,7 @@
 
 
 <h1 id="extensions-how-to">Extensions How-To<a class="headerlink" href="#extensions-how-to" title="Permanent link">#</a></h1>
-<h3 id="using-enumextension">Using EnumExtension<a class="headerlink" href="#using-enumextension" title="Permanent link">#</a></h3>
+<h3 id="using-enum-extension">Using Enum extension<a class="headerlink" href="#using-enum-extension" title="Permanent link">#</a></h3>
 <p>Enum extension allows you to get random element or value from selected Enum object. It has two methods:</p>
 <ul>
 <li>enumValue(), that will get value from backed enums (which has to be string or int)</li>
@@ -1408,7 +1449,7 @@ $generator = new DummyGenerator($container);
 $generator-&gt;enumCase(SuitBackedIntEnum::class); // it will get random element, i.e. SuitBackedIntEnum::Diamonds
 // or
 $generator-&gt;enumValue(SuitBackedIntEnum::class); // it will get random value, i.e. "Spades"</code></pre>
-<h3 id="using-stringsextension">Using StringsExtension<a class="headerlink" href="#using-stringsextension" title="Permanent link">#</a></h3>
+<h3 id="using-strings-extension">Using Strings extension<a class="headerlink" href="#using-strings-extension" title="Permanent link">#</a></h3>
 <p>With <code>LoremExtension</code> you can generate <code>words()</code> or <code>text()</code>. You can generate single word too - with <code>word()</code>, it will give you random words from Lorem Ipsum sample.</p>
 <p>In <a href="https://github.com/johnykvsky/dummyproviders">dummyproviders</a> there is also <code>TextExtension</code> that allows you to generate random text with given length with <code>realText()</code>.</p>
 <p>But sometimes you want just a simple random string, with given length or given structure: only letters, with some numbers, with capital letters. This is where <code>StringsExtension</code> can help you:</p>
@@ -1425,6 +1466,41 @@ $string4 = $generator-&gt;string(3, 10, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLM
 </ul>
 <p>If you want to have string with possible spaces - just create your own pool, i.e. <code>abcdefghijkl mnopqrstuvwxyz</code></p>
 <p>At core, it uses <code>\Random\Randomizer::getBytesFromString()</code> to generate random string.</p>
+<h3 id="anydatetime-versus-datetime">AnyDateTime versus DateTime<a class="headerlink" href="#anydatetime-versus-datetime" title="Permanent link">#</a></h3>
+<p><code>DummyGenerator</code> comes with two extensions for date-time related data generation:</p>
+<ul>
+<li><code>DateTime</code>, which is port of Faker DateTime extension, with same methods</li>
+<li><code>AnyDateTime</code>, which is build with a bit different approach</li>
+</ul>
+<p>While in <code>DateTime</code> you have various:</p>
+<pre class="highlight"><code class="language-php">$generator-&gt;dateTimeThisMonth();
+$generator-&gt;dateTimeThisYear();
+$generator-&gt;amPm();
+// and so on</code></pre>
+<p>All of them accepting strings and returning strings. In <code>AnyDateTime</code> you have two methods:</p>
+<ul>
+<li><code>anyDate($date, $interval, $period)</code> used to get date "around" passed date</li>
+<li><code>anyDateBetween($from, $to)</code> used to generate date between passed dates</li>
+</ul>
+<p><code>AnyDateTime</code> we operate on <code>DateTimeInterface</code> objects. For <code>anyDate</code> you can pass:</p>
+<ul>
+<li>date, which is "starting point" (by default it's "now")</li>
+<li>interval, as PHP \DateInterval(), so it can be year, month, 3 days, 5 hours... (by default it's 10 years)</li>
+<li>period, that has only 3 available cases: PAST_DATE, FUTURE_DATE or ANY_DATE (by default it's ANY_DATE)</li>
+</ul>
+<p>How it works, it all depends on period:</p>
+<ul>
+<li>PAST_DATE means: take passed date and subtract passed interval from it. Passed date is date to, calculated is date from.</li>
+<li>FUTURE_DATE means: take passed date and add passed interval to it. Passed date is date from, calculated is date to.</li>
+<li>ANY_DATE means: take passed date, calculate date from by subtracking passed interval and calculate date to by adding passed interval.</li>
+</ul>
+<p>So, in example, for passed date 2025-08-01 and interval 30 days it will:</p>
+<ul>
+<li>PAST_DATE, date from is 2025-08-01 minus 30 days, date to is 2025-08-01</li>
+<li>FUTURE_DATE, date from is 2025-08-01 and date to is 2025-08-01 plus 30 days</li>
+<li>ANY_DATE, date from is 2025-08-01 minus 30 days, date to is 2025-08-01 plus 30 days</li>
+</ul>
+<p>Generated date will be within this date ranges. Since it's returning <code>DateTimeInterface</code> object, you can use format() to get desired string value.</p>
 
 
 

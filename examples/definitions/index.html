@@ -620,6 +620,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../extensions/anydatetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Anydatetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../extensions/barcode/" class="md-nav__link">
         
   
@@ -1232,6 +1255,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-can-i-remove-definition-from-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can I remove definition from container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-change-definition-on-the-fly" class="md-nav__link">
     <span class="md-ellipsis">
       How can I change definition on the fly
@@ -1370,6 +1402,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-can-i-remove-definition-from-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can I remove definition from container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-change-definition-on-the-fly" class="md-nav__link">
     <span class="md-ellipsis">
       How can I change definition on the fly
@@ -1428,6 +1469,11 @@ $container-&gt;add(AddressExtensionInterface::class, MyAddressExtension::create(
 <li>IsbnCalculatorInterface</li>
 <li>LuhnCalculatorInterface</li>
 </ul>
+<h3 id="how-can-i-remove-definition-from-container">How can I remove definition from container<a class="headerlink" href="#how-can-i-remove-definition-from-container" title="Permanent link">#</a></h3>
+<p>You can do that either by calling </p>
+<pre class="highlight"><code class="language-php">$generator-&gt;removeDefinition(PersonExtensionInterface::class);</code></pre>
+<p>or</p>
+<pre class="highlight"><code class="language-php">$container-&gt;remove(PersonExtensionInterface::class);</code></pre>
 <h3 id="how-can-i-change-definition-on-the-fly">How can I change definition on the fly<a class="headerlink" href="#how-can-i-change-definition-on-the-fly" title="Permanent link">#</a></h3>
 <p>To change definition to your own implementations you have use <code>addDefinition()</code> passing original definition identifier and your custom class name:</p>
 <pre class="highlight"><code class="language-php">$generator-&gt;firstName(); // will generate i.e. "Harry"
