@@ -61,7 +61,7 @@ nav:
       - architecture/clock.md
   - 'Extensions':
       - extensions/address.md
-      - extensions/anydatetime.md
+      - extensions/AnyDateTime.md
       - extensions/barcode.md
       - extensions/biased.md
       - extensions/blood.md
@@ -69,7 +69,7 @@ nav:
       - extensions/company.md
       - extensions/coordinates.md
       - extensions/country.md
-      - extensions/datetime.md
+      - extensions/DateTime.md
       - extensions/enum.md
       - extensions/file.md
       - extensions/hash.md
@@ -79,9 +79,9 @@ nav:
       - extensions/number.md
       - extensions/payment.md
       - extensions/person.md
-      - extensions/phone_number.md
+      - extensions/PhoneNumber.md
       - extensions/strings.md
-      - extensions/user_agent.md
+      - extensions/UserAgent.md
       - extensions/uuid.md
       - extensions/version.md
   - 'Examples & How-To':
